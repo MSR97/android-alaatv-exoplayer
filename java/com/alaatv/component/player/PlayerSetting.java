@@ -51,8 +51,8 @@ class PlayerSetting {
     
     MutableLiveData<Boolean>        isTappedFullScreen = new MutableLiveData<>();
     PlayerOnGestureRegisterListener playerOnGestureRegisterListener;
-    private WeakReference<Context>    contextWeakReference;
-    private WeakReference<PlayerView> playerViewWeakReference;
+    private WeakReference<Context> contextWeakReference;
+    private PlayerView             playerView;
     
     private PlaybackStateListener            playbackStateListener;
     private SimpleExoPlayer                  player;
@@ -85,7 +85,7 @@ class PlayerSetting {
     private ErrorCallback                    errorCallback              = null;
     
     PlayerSetting( PlayerView playerView, Context context, ViewGroup mAdUiContainer ) {
-        playerViewWeakReference = new WeakReference<>(playerView);
+        this.playerView = playerView;
         contextWeakReference = new WeakReference<>(context);
         playbackStateListener = new PlaybackStateListener(context, playerImaService, ( ) -> {
             if ( errorCallback != null ) {
@@ -209,7 +209,7 @@ class PlayerSetting {
     
     @Nullable
     protected PlayerView getPlayerView( ) {
-        return playerViewWeakReference.get();
+        return playerView;
     }
     
     void initializePlayer( int quality, boolean playWithAds ) {
