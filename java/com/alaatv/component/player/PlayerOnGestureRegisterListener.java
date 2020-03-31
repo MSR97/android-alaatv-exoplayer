@@ -5,79 +5,50 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import java.lang.ref.WeakReference;
-
 import timber.log.Timber;
 
 public abstract class PlayerOnGestureRegisterListener implements View.OnTouchListener {
-    private WeakReference<GestureDetector> gestureDetectorWeakReference;
+    private GestureDetector gestureDetector;
     
     public PlayerOnGestureRegisterListener( Context context, View view ) {
-        GestureDetector gestureDetector =
+        gestureDetector =
                 new GestureDetector(context, new GestureListener(new GestureListener.Callback() {
-                    WeakReference<View> viewWeakReference = new WeakReference<>(view);
                     
                     @Override
                     public void onSingleTapUp( ) {
-                        if ( getView() == null ) {
-                            return;
-                        }
-                        onClick(getView());
-                    }
-                    
-                    View getView( ) {
-                        return viewWeakReference.get();
+                        onClick(view);
                     }
                     
                     @Override
                     public void onLongPress( ) {
-                        if ( getView() == null ) {
-                            return;
-                        }
-                        onLongClick(getView());
+                        onLongClick(view);
                     }
                     
                     @Override
                     public void onDoubleTapEvent( ) {
-                        if ( getView() == null ) {
-                            return;
-                        }
-                        onDoubleTaps(getView());
+                        onDoubleTaps(view);
                     }
                     
                     @Override
                     public void onSwipeR( ) {
-                        if ( getView() == null ) {
-                            return;
-                        }
-                        onSwipeRight(getView());
+                        onSwipeRight(view);
                     }
                     
                     @Override
                     public void onSwipeL( ) {
-                        if ( getView() == null ) {
-                            return;
-                        }
-                        onSwipeLeft(getView());
+                        onSwipeLeft(view);
                     }
                     
                     @Override
                     public void onSwipeT( ) {
-                        if ( getView() == null ) {
-                            return;
-                        }
-                        onSwipeTop(getView());
+                        onSwipeTop(view);
                     }
                     
                     @Override
                     public void onSwipeB( ) {
-                        if ( getView() == null ) {
-                            return;
-                        }
-                        onSwipeBottom(getView());
+                        onSwipeBottom(view);
                     }
                 }));
-        gestureDetectorWeakReference = new WeakReference<>(gestureDetector);
     }
     
     public abstract void onLongClick( View view );
@@ -96,31 +67,28 @@ public abstract class PlayerOnGestureRegisterListener implements View.OnTouchLis
     
     @Override
     public boolean onTouch( View v, MotionEvent event ) {
-        if ( gestureDetectorWeakReference.get() != null ) {
-            return gestureDetectorWeakReference.get().onTouchEvent(event);
-        }
-        return false;
+        return gestureDetector.onTouchEvent(event);
     }
     
     private static class GestureListener extends GestureDetector.SimpleOnGestureListener {
-        WeakReference<Callback> callback;
+        Callback callback;
         
         GestureListener( Callback callback ) {
-            this.callback = new WeakReference<>(callback);
+            this.callback = callback;
         }
         
         @Override
         public boolean onSingleTapUp( MotionEvent e ) {
-            if ( callback.get() != null ) {
-                callback.get().onSingleTapUp();
+            if ( callback != null ) {
+                callback.onSingleTapUp();
             }
             return super.onSingleTapUp(e);
         }
         
         @Override
         public void onLongPress( MotionEvent e ) {
-            if ( callback.get() != null ) {
-                callback.get().onLongPress();
+            if ( callback != null ) {
+                callback.onLongPress();
             }
             super.onLongPress(e);
         }
@@ -133,22 +101,22 @@ public abstract class PlayerOnGestureRegisterListener implements View.OnTouchLis
                 if ( Math.abs(diffX) > Math.abs(diffY) ) {
                     if ( Math.abs(diffX) > PlayerConstants.SWIPE_THRESHOLD &&
                          Math.abs(velocityX) > PlayerConstants.SWIPE_VELOCITY_THRESHOLD ) {
-                        if ( callback.get() != null ) {
+                        if ( callback != null ) {
                             if ( diffX > 0 ) {
-                                callback.get().onSwipeR();
+                                callback.onSwipeR();
                             } else {
-                                callback.get().onSwipeL();
+                                callback.onSwipeL();
                             }
                         }
                         return true;
                     }
                 } else if ( Math.abs(diffY) > PlayerConstants.SWIPE_THRESHOLD &&
                             Math.abs(velocityY) > PlayerConstants.SWIPE_VELOCITY_THRESHOLD ) {
-                    if ( callback.get() != null ) {
+                    if ( callback != null ) {
                         if ( diffY > 0 ) {
-                            callback.get().onSwipeB();
+                            callback.onSwipeB();
                         } else {
-                            callback.get().onSwipeT();
+                            callback.onSwipeT();
                         }
                     }
                     return true;
@@ -167,8 +135,8 @@ public abstract class PlayerOnGestureRegisterListener implements View.OnTouchLis
         
         @Override
         public boolean onDoubleTapEvent( MotionEvent e ) {
-            if ( callback.get() != null ) {
-                callback.get().onDoubleTapEvent();
+            if ( callback != null ) {
+                callback.onDoubleTapEvent();
             }
             return super.onDoubleTapEvent(e);
         }
