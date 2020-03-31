@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TextViewWithFont</string>
+    <string name="dummy">متن نمونه</string>
+    <string name="dummy2"> متن نمونه 2</string>
+    <string name="more">بیشتر</string>
+    <string name="discountManfi">(-) تخفیف </string>
+    <string name="demo_feature">-----</string>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3AF3DF</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#FD0863</color>
+
+    //White
+    <color name="pureWhite">#ffffff</color>
+    <color name="snowWhite">#F4FAFA</color>
+    <color name="smokyWhite">#F5F5F5</color>
+    <color name="ghostWhite">#F8F8FF</color>
+
+    <color name="grayWhite">#A1EEEEEE</color>
+    <color name="grayHint">#FCD6D0D0</color>
+    <color name="default_gray">#EEEEEE</color>
+    <color name="blackTitle">#CD000000</color>
+    <color name="blackOpacity">#A1000000</color>
+    <color name="black">#000</color>
+    <color name="gray">#D2726E6E</color>
+    <color name="gray2">#D2201F1F</color>
+
+    //Green
+    <color name="green">#30AF94</color>
+    <color name="greenBackground">#9A30AF94</color>
+    <color name="pistachioNutsGreen">#00FF00</color>
+    <color name="mintGreen">#B298FB98</color>
+    <color name="SampleVideoGreen">#4CAF50</color>
+    <color name="lightGreen">#00cc1b</color>
+    <color name="BonGreen">#0FB37B</color>
+    <color name="darkGreen">#065A08</color>
+    <color name="DarkOliveGreen">#556B2F</color>
+
+    <color name="saddleBrown">#8B4513</color>
+    <color name="purple">#9816F4</color>
+    <color name="Red">#8A0505</color>
+    <color name="RedLight">#E91E1E</color>
+    <color name="redPdf">#dd636e</color>
+    <color name="redAttribute">#F0BD1393</color>
+
+    <!-- Alaa colors -->
+    <color name="alaa0">#4A7A88</color>
+    <color name="alaa">#D5F7B999</color>
+    <color name="alaa1">#ffa837</color>
+    <color name="alaa2">#ff9e21</color>
+    <color name="alaa3">#ff9a17</color>
+    <color name="alaa4">#ff950b</color>
+    <color name="alaa5">#ff9000</color>
+
+    <!-- dux.lab Orange Recommend Color MonoChromatic -->
+    <color name="duxOrange1">#DAFFBF00</color>
+    <color name="duxOrange2">#FFA000</color>
+    <color name="duxOrange3">#D8FF8C00</color>
+    <color name="duxOrange4">#FF6600</color>
+
+    <!-- dux.lab Green Recommend Color MonoChromatic -->
+    <color name="duxGreen1">#D84CBB17</color>
+    <color name="duxGreen2">#46CB18</color>
+    <color name="duxGreen3">#138808</color>
+    <color name="duxGreen4">#006400</color>
+
+    <!-- dux.lab Blue Recommend Color MonoChromatic -->
+    <color name="duxBlue1">#DA3ACBE8</color>
+    <color name="duxBlue2">#0D85D8</color>
+    <color name="duxBlue3">#0160C9</color>
+    <color name="duxBlue4">#0041C7</color>
+
+    <!-- dux.lab Purple Recommend Color MonoChromatic -->
+    <color name="duxPurple1">#FFF6F6</color>
+    <color name="duxPurple2">#EEA1EB</color>
+    <color name="duxPurple3">#CB22D7</color>
+    <color name="duxPurple4">#891180</color>
+
+
+    <color name="blue">#ED20A1D3</color>
+    <color name="blueDark">#ED234DDF</color>
+
+    <color name="editTextColor">#295055</color>
+
+
+    // Material Design Color Palette suggestion
+
+    <color name="primary">#ff9100</color>
+    <color name="complementary">#006eff</color>
+    <color name="analogousI">#ff1100</color>
+    <color name="analogousII">#eeff00</color>
+    <color name="triadicI">#6fff00</color>
+    <color name="triadicII">#00ff91</color>
+
+
+</resources>

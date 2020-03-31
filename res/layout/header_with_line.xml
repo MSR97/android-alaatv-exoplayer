@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/blackOpacity"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tx_header"
+        app:layout_constraintEnd_toStartOf="@id/btn_header"
+        app:layout_constraintStart_toEndOf="@id/tx_header"
+        app:layout_constraintTop_toTopOf="@id/tx_header" />
+
+    <Button
+        android:id="@+id/btn_header"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layoutDirection="ltr"
+        android:text="@string/more"
+        android:textColor="@color/alaa5"
+        android:visibility="visible"
+        android:fontFamily="@font/iransans_light"
+        app:icon="@drawable/ic_chevron_left_black_24dp"
+        app:iconTint="@color/alaa5"
+        app:layout_constraintBottom_toBottomOf="@id/tx_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tx_header" />
+
+    <TextView
+
+        android:id="@+id/tx_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/dummy"
+        android:fontFamily="@font/iransans_medium"
+        android:padding="@dimen/padding_5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_header"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

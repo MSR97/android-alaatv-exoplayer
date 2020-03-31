@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Player">
+        <attr name="product_introduction_video" format="boolean"/>
+        <attr name="video_url_720" format="string" />
+        <attr name="video_url_480" format="string" />
+        <attr name="video_url_240" format="string" />
+        <attr name="vast_url" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="TextViewWithCardBackground">
+        <attr name="text" format="string" />
+        <attr name="card_color" format="color|reference" />
+        <attr name="text_color" format="color|reference" />
+        <attr name="text_size" format="dimension" />
+        <attr name="card_radius" format="dimension" />
+        <attr name="leftIcon" format="reference" />
+        <attr name="rightIcon" format="reference" />
+        <attr name="text_font" format="enum">
+            <enum name="estedad" value="1" />
+            <enum name="IranSansNum" value="2" />
+            <enum name="IranSansNumBold" value="3" />
+            <enum name="IranSansNumLight" value="4" />
+            <enum name="IranSansNumMedium" value="5" />
+            <enum name="IranSansNumUltraLight" value="6" />
+            <enum name="shekaste" value="7" />
+        </attr>
+
+
+    </declare-styleable>
+
+    <declare-styleable name="HeaderWithLine">
+        <attr name="header_buttonText" format="string" />
+        <attr name="header_hasButton" format="boolean" />
+        <attr name="header_buttonColor" format="color|reference" />
+        <attr name="header_text" format="string" />
+        <attr name="header_textColor" format="color|reference" />
+        <attr name="header_textSize" format="dimension" />
+        <attr name="header_textFont" format="enum">
+            <enum name="estedad" value="1" />
+            <enum name="IranSansNum" value="2" />
+            <enum name="IranSansNumBold" value="3" />
+            <enum name="IranSansNumLight" value="4" />
+            <enum name="IranSansNumMedium" value="5" />
+            <enum name="IranSansNumUltraLight" value="6" />
+            <enum name="shekaste" value="7" />
+        </attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="FeatureBox">
+        <attr name="title_featureBox" format="string|reference" />
+        <attr name="value_featureBox" format="string|reference" />
+        <attr name="icon_featureBox" format="reference" />
+    </declare-styleable>
+</resources>
